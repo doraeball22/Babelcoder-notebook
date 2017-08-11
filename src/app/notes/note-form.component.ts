@@ -12,10 +12,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
     `
 })
 export class NoteFormComponent {
-    @Output() formSubmit = new EventEmitter();
+    @Output() formSubmit: EventEmitter<string> = new EventEmitter();
     note = "";
 
-    addNote(event) {
+    addNote(event: MouseEvent) {
         event.preventDefault();
         // alert(this.note);
         this.formSubmit.emit(this.note);
